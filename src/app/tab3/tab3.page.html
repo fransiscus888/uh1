@@ -1,17 +1,19 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      List All Foto
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list no-lines>
+    <ion-item *ngFor="let iFoto of urlImageStorage; index as position">
+      <ion-text color="Primary">
+        <h1>{{iFoto.name}}</h1>
+      </ion-text>
+      <ion-img [src]="iFoto" [routerLink]="['/tab4',iFoto]"></ion-img>
+    </ion-item>
+ </ion-list>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
 </ion-content>
